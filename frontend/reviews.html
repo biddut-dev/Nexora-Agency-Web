@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NEXORA Agency | Client Reviews</title>
+  <style>
+    body{margin:0;font-family:Arial;background:#000;color:#fff;}
+    header{background:#800000;padding:15px 30px;}
+    .logo{display:inline-block;font-size:24px;font-weight:bold;color:#fff;}
+    nav ul{list-style:none;float:right;margin:0;padding:0;}
+    nav ul li{display:inline-block;margin:0 10px;}
+    nav ul li a{color:#fff;text-decoration:none;transition:all 0.3s ease;}
+    nav ul li a:hover{color:#ffcc00;border-bottom:2px solid #ffcc00;}
+    .hero{text-align:center;padding:60px 20px;background:linear-gradient(to right,#000,#800000);}
+    .hero h2{font-size:32px;margin-bottom:20px;}
+    .reviews-container{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;padding:40px;}
+    .review-card{background:#111;border:1px solid #800000;border-radius:8px;width:280px;padding:20px;text-align:center;transition:transform 0.3s ease,box-shadow 0.3s ease;}
+    .review-card:hover{transform:translateY(-5px);box-shadow:0 0 15px #800000;}
+    .review-card h3{color:#ffcc00;margin-bottom:10px;}
+    .review-card p{color:#ccc;font-size:14px;}
+    .stars{color:#ffcc00;margin:10px 0;}
+    footer{background:#111;text-align:center;padding:20px;font-size:14px;color:#fff;margin-top:auto;}
+    .footer-container{display:flex;flex-wrap:wrap;justify-content:space-around;text-align:left;}
+    .footer-section{flex:1;min-width:250px;margin:10px;}
+    .footer-section h3{color:#ffcc00;margin-bottom:10px;}
+    .footer-section p,.footer-section a{color:#ccc;text-decoration:none;transition:color 0.3s ease;}
+    .footer-section a:hover{color:#ffcc00;}
+    .social-icons a{font-size:20px;margin-right:10px;transition:transform 0.3s ease,color 0.3s ease;}
+    .social-icons a:hover{color:#ffcc00;transform:scale(1.2);}
+    .footer-bottom{text-align:center;margin-top:20px;border-top:1px solid #333;padding-top:10px;font-size:14px;color:#aaa;}
+    .chatbot{position:fixed;right:0;bottom:0;width:250px;height:60%;background:#111;border-left:3px solid #800000;display:flex;flex-direction:column;}
+    .chat-header{background:#800000;padding:10px;font-weight:bold;}
+    .chat-body{flex:1;padding:10px;overflow-y:auto;}
+    .chat-footer{padding:10px;background:#222;display:flex;}
+    .chat-footer input{flex:1;padding:5px;border:none;}
+    .chat-footer button{background:#800000;color:#fff;border:none;padding:5px 10px;}
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1 class="logo">NEXORA Agency</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="previous.html">Previous Work</a></li>
+        <li><a href="reviews.html">Client Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="chatbot.html">Chatbot</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Client Reviews</h2>
+    <p>Hear what our clients say about working with us.</p>
+  </section>
+
+  <div class="reviews-container" id="reviewsContainer">
+    <!-- Reviews loaded dynamically from MongoDB -->
+  </div>
+
+  <div class="review-form-container" style="max-width: 600px; margin: 40px auto; padding: 20px; background: #111; border: 1px solid #800000; border-radius: 8px;">
+    <h3 style="color: #ffcc00; margin-bottom: 20px; text-align: center;">Leave a Review</h3>
+    <form id="reviewForm" style="display: flex; flex-direction: column; gap: 15px;">
+      <input type="text" id="reviewName" placeholder="Your Name" required style="padding: 10px; border: none; border-radius: 5px; background: #222; color: #fff; border: 1px solid #333;">
+      <select id="reviewStars" required style="padding: 10px; border: none; border-radius: 5px; background: #222; color: #fff; border: 1px solid #333; outline: none; cursor: pointer;">
+        <option value="" disabled selected>Select Rating</option>
+        <option value="5">★★★★★ (5 Stars)</option>
+        <option value="4">★★★★☆ (4 Stars)</option>
+        <option value="3">★★★☆☆ (3 Stars)</option>
+        <option value="2">★★☆☆☆ (2 Stars)</option>
+        <option value="1">★☆☆☆☆ (1 Star)</option>
+      </select>
+      <textarea id="reviewComment" rows="4" placeholder="Your Comment" required style="padding: 10px; border: none; border-radius: 5px; background: #222; color: #fff; border: 1px solid #333; font-family: inherit;"></textarea>
+      <button type="submit" style="background: #800000; color: #fff; border: none; padding: 10px; border-radius: 5px; transition: 0.3s; cursor: pointer; font-weight: bold;">Submit Review</button>
+    </form>
+    <div id="reviewStatus" style="margin-top: 15px; text-align: center; font-weight: bold; min-height: 20px;"></div>
+  </div>
+
+  <!-- Footer same as services.html -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section faq">
+        <h3>FAQ</h3>
+        <p><strong>Q:</strong> How long does a project take?<br><strong>A:</strong> Depends on scope, usually 2–6 weeks.</p>
+        <p><strong>Q:</strong> Do you offer support?<br><strong>A:</strong> Yes, 24/7 client support available.</p>
+      </div>
+      <div class="footer-section contact">
+        <h3>Contact Us</h3>
+        <p>📧 Email: <a href="mailto:nexoraagency@gmail.com">nexoraagency@gmail.com</a></p>
+        <p>📘 Facebook: <a href="https://fb.com/nexoraagency" target="_blank">fb.com/nexoraagency</a></p>
+        <p>📱 WhatsApp: <a href="https://wa.me/880123456789" target="_blank">+880123456789</a></p>
+      </div>
+      <div class="footer-section social">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="https://fb.com/nexoraagency" target="_blank">🌐</a>
+          <a href="https://wa.me/880123456789" target="_blank">💬</a>
+          <a href="mailto:nexoraagency@gmail.com">✉️</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 NEXORA Agency. All Rights Reserved.</p></div>
+  </footer>
+
+  <!-- Chatbot dock -->
+  <div id="chatbotBox" class="chatbot">
+    <div class="chat-header">💬 NEXORA Chatbot</div>
+    <div class="chat-body"><p>Hello! How can we help you today?</p></div>
+    <div class="chat-footer"><input type="text" placeholder="Type a message..."><button>Send</button></div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const input=document.querySelector(".chat-footer input");
+      const button=document.querySelector(".chat-footer button");
+      const chatBody=document.querySelector(".chat-body");
+      button.addEventListener("click",()=>{
+        if(input.value.trim()!==""){
+          const userMsg=document.createElement("p");
+          userMsg.textContent="You: "+input.value;
+          chatBody.appendChild(userMsg);
+          input.value="";
+          const botMsg=document.createElement("p");
+          botMsg.textContent="Bot: Thanks for reaching out!";
+          chatBody.appendChild(botMsg);
+        }
+      });
+
+      // Reviews API Logic
+      const reviewsContainer = document.getElementById("reviewsContainer");
+      const reviewForm = document.getElementById("reviewForm");
+      const reviewStatus = document.getElementById("reviewStatus");
+
+      async function loadReviews() {
+        try {
+          const response = await fetch("http://localhost:5000/api/reviews");
+          const reviews = await response.json();
+
+          reviewsContainer.innerHTML = "";
+
+          if (reviews && reviews.length > 0) {
+            reviews.forEach(review => {
+              const card = document.createElement("div");
+              card.className = "review-card";
+              
+              let starString = "";
+              for (let i = 0; i < 5; i++) {
+                starString += i < review.rating ? "★" : "☆";
+              }
+
+              card.innerHTML = `
+                <h3>${escapeHTML(review.clientName || "")}</h3>
+                <div class="stars">${starString}</div>
+                <p>${escapeHTML(review.review || "")}</p>
+              `;
+              reviewsContainer.appendChild(card);
+            });
+          } else {
+            // Fallback mock reviews if DB is empty
+            const fallbackReviews = [
+              { name: "Sarah K.", stars: 5, comment: "NEXORA built our e‑commerce site flawlessly. Sales increased by 40%!" },
+              { name: "David R.", stars: 4, comment: "The SEO campaign boosted our blog traffic massively. Highly recommended." },
+              { name: "Ayesha M.", stars: 5, comment: "Digital marketing strategy was creative and effective. Great team!" },
+              { name: "James L.", stars: 5, comment: "Cybersecurity solutions gave us peace of mind. Professional service." }
+            ];
+            
+            fallbackReviews.forEach(review => {
+              const card = document.createElement("div");
+              card.className = "review-card";
+              
+              let starString = "";
+              for (let i = 0; i < 5; i++) {
+                starString += i < review.stars ? "★" : "☆";
+              }
+
+              card.innerHTML = `
+                <h3>${review.name}</h3>
+                <div class="stars">${starString}</div>
+                <p>${review.comment}</p>
+              `;
+              reviewsContainer.appendChild(card);
+            });
+          }
+        } catch (error) {
+          console.error("Error loading reviews:", error);
+          reviewsContainer.innerHTML = "<p style='color: #ff3333; text-align: center; width: 100%;'>Error loading reviews from database.</p>";
+        }
+      }
+
+      function escapeHTML(str) {
+        return str.replace(/[&<>'"]/g, 
+          tag => ({
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            "'": '&#39;',
+            '"': '&quot;'
+          }[tag] || tag)
+        );
+      }
+
+      if (reviewForm) {
+        reviewForm.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          reviewStatus.style.color = "#ffcc00";
+          reviewStatus.textContent = "Submitting review...";
+
+          const name = document.getElementById("reviewName").value;
+          const stars = document.getElementById("reviewStars").value;
+          const comment = document.getElementById("reviewComment").value;
+
+          try {
+            const response = await fetch("http://localhost:5000/api/reviews", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify({ name, stars, comment })
+            });
+
+            const data = await response.json();
+
+            if (response.ok && data.success) {
+              reviewStatus.style.color = "#00ff00";
+              reviewStatus.textContent = "Review posted successfully!";
+              reviewForm.reset();
+              loadReviews();
+            } else {
+              reviewStatus.style.color = "#ff3333";
+              reviewStatus.textContent = data.error || "Failed to submit review.";
+            }
+          } catch (error) {
+            console.error("Error submitting review:", error);
+            reviewStatus.style.color = "#ff3333";
+            reviewStatus.textContent = "Error: Could not connect to the server.";
+          }
+        });
+      }
+
+      loadReviews();
+    });
+  </script>
+</body>
+</html>
