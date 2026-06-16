@@ -26,11 +26,23 @@ app.use("/api/contacts", contactRoutes);
 app.use("/api/reviews", reviewRoutes);
 
 // Database Connection
-mongoose.connect(process.env.MONGO_URI)
+const connectDB = async () => {
+  if (mongoose.connection.readyState >= 1) return;
+  return mongoose.connect(process.env.MONGO_URI);
+};
+
+connectDB()
   .then(() => {
     console.log("MongoDB Connected Successfully");
-    app.listen(PORT, () => {
-      console.log(`Server Running on port ${PORT}`);
-    });
   })
   .catch(err => console.log("MongoDB connection error:", err));
+
+// Start server locally or on persistent host
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Server Running on port ${PORT}`);
+  });
+}
+
+// Export app for Vercel serverless environment
+module.exports = app;
