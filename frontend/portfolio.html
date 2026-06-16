@@ -2,95 +2,243 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>NEXORA Agency | Portfolio</title>
-  <style>
-    body{margin:0;font-family:Arial;background:#000;color:#fff;}
-    header{background:#800000;padding:15px 30px;}
-    .logo{display:inline-block;font-size:24px;font-weight:bold;color:#fff;}
-    nav ul{list-style:none;float:right;margin:0;padding:0;}
-    nav ul li{display:inline-block;margin:0 10px;}
-    nav ul li a{color:#fff;text-decoration:none;transition:all 0.3s ease;}
-    nav ul li a:hover{color:#ffcc00;border-bottom:2px solid #ffcc00;}
-    .hero{text-align:center;padding:60px 20px;background:linear-gradient(to right,#000,#800000);}
-    .hero h2{font-size:32px;margin-bottom:20px;}
-    .portfolio-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;padding:40px;}
-    .portfolio-item{background:#111;border:1px solid #800000;border-radius:8px;width:250px;padding:20px;text-align:center;transition:transform 0.3s ease,box-shadow 0.3s ease;}
-    .portfolio-item:hover{transform:translateY(-5px);box-shadow:0 0 15px #800000;}
-    .portfolio-item h3{color:#ffcc00;margin-bottom:10px;}
-    .portfolio-item p{color:#ccc;font-size:14px;}
-    footer{background:#111;text-align:center;padding:20px;font-size:14px;color:#fff;margin-top:auto;}
-    .footer-container{display:flex;flex-wrap:wrap;justify-content:space-around;text-align:left;}
-    .footer-section{flex:1;min-width:250px;margin:10px;}
-    .footer-section h3{color:#ffcc00;margin-bottom:10px;}
-    .footer-section p,.footer-section a{color:#ccc;text-decoration:none;transition:color 0.3s ease;}
-    .footer-section a:hover{color:#ffcc00;}
-    .social-icons a{font-size:20px;margin-right:10px;transition:transform 0.3s ease,color 0.3s ease;}
-    .social-icons a:hover{color:#ffcc00;transform:scale(1.2);}
-    .footer-bottom{text-align:center;margin-top:20px;border-top:1px solid #333;padding-top:10px;font-size:14px;color:#aaa;}
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXORA Agency | Team Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <h1 class="logo">NEXORA Agency</h1>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="previous.html">Previous Work</a></li>
-        <li><a href="reviews.html">Client Reviews</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="chatbot.html">Chatbot</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="page-container">
+    <header>
+      <nav>
+        <h1 class="logo">NEXORA Agency</h1>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html" class="active">Team Portfolio</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="previous.html">Previous Work</a></li>
+          <li><a href="reviews.html">Client Reviews</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#" id="navChatbot">Chatbot</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <section class="hero">
-    <h2>Our Portfolio</h2>
-    <p>Showcase of our creative projects and successful campaigns.</p>
-  </section>
+    <section class="hero">
+      <h2>Meet Our Experts</h2>
+      <p>The elite engineering, branding, and digital growth specialists behind Nexora's success.</p>
+    </section>
 
-  <div class="portfolio-grid">
-    <div class="portfolio-item"><h3>Project A</h3><p>Responsive e‑commerce website with integrated payments.</p></div>
-    <div class="portfolio-item"><h3>Project B</h3><p>SEO optimization campaign for a tech blog.</p></div>
-    <div class="portfolio-item"><h3>Project C</h3><p>Digital marketing campaign reaching 1M+ users.</p></div>
-    <div class="portfolio-item"><h3>Project D</h3><p>Cybersecurity solutions for financial institutions.</p></div>
-  </div>
-
-  <!-- Footer same as services.html -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-section faq">
-        <h3>FAQ</h3>
-        <p><strong>Q:</strong> How long does a project take?<br><strong>A:</strong> Depends on scope, usually 2–6 weeks.</p>
-        <p><strong>Q:</strong> Do you offer support?<br><strong>A:</strong> Yes, 24/7 client support available.</p>
+    <!-- Grid of Team Members -->
+    <div class="portfolio-grid" id="teamGrid">
+      <div class="service-card" style="opacity: 0.6; text-align: center;">
+        <h3 style="color: var(--accent-gold);">Loading Experts...</h3>
+        <p>Fetching team records from database...</p>
       </div>
-      <div class="footer-section contact">
-        <h3>Contact Us</h3>
-        <p>📧 Email: <a href="mailto:nexoraagency@gmail.com">nexoraagency@gmail.com</a></p>
-        <p>📘 Facebook: <a href="https://fb.com/nexoraagency" target="_blank">fb.com/nexoraagency</a></p>
-        <p>📱 WhatsApp: <a href="https://wa.me/880123456789" target="_blank">+880123456789</a></p>
-      </div>
-      <div class="footer-section social">
-        <h3>Follow Us</h3>
-        <div class="social-icons">
-          <a href="https://fb.com/nexoraagency" target="_blank">🌐</a>
-          <a href="https://wa.me/880123456789" target="_blank">💬</a>
-          <a href="mailto:nexoraagency@gmail.com">✉️</a>
+    </div>
+
+    <!-- Fullscreen Member Details Modal -->
+    <div id="memberModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" id="closeModal">&times;</span>
+        
+        <div class="modal-header-section">
+          <img src="" id="modalAvatar" class="modal-avatar" alt="Team Member">
+          <div class="modal-name-title">
+            <h2 id="modalName">Name</h2>
+            <div id="modalRole" class="modal-role">Role</div>
+          </div>
+        </div>
+
+        <div class="modal-body-section">
+          <div>
+            <h4 class="modal-section-title">Biography</h4>
+            <p id="modalBio" class="modal-bio">Bio description...</p>
+          </div>
+
+          <div>
+            <h4 class="modal-section-title">Certifications & Credentials</h4>
+            <div id="modalBadges" class="badges-container">
+              <!-- Certifications list -->
+            </div>
+          </div>
+
+          <div>
+            <h4 class="modal-section-title">Led / Contributed Projects</h4>
+            <div id="modalProjects" class="projects-list">
+              <!-- Led projects list -->
+            </div>
+          </div>
+
+          <div>
+            <h4 class="modal-section-title">Direct Connection</h4>
+            <div id="modalContacts" class="modal-contact-links">
+              <!-- Phone and email links -->
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="footer-bottom"><p>© 2026 NEXORA Agency. All Rights Reserved.</p></div>
-  </footer>
 
-  <!-- Chatbot dock -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section faq">
+          <h3>FAQ</h3>
+          <p><strong>Q:</strong> How long does a project take?<br><strong>A:</strong> Usually 2–6 weeks, depending on the scope.</p>
+          <p style="margin-top: 10px;"><strong>Q:</strong> Do you offer continuous support?<br><strong>A:</strong> Yes, 24/7 dedicated support is available.</p>
+        </div>
+        <div class="footer-section contact">
+          <h3>Contact Us</h3>
+          <p>📧 Email: <a href="mailto:nexoraagency@gmail.com">nexoraagency@gmail.com</a></p>
+          <p>📘 Facebook: <a href="https://fb.com/nexoraagency" target="_blank">fb.com/nexoraagency</a></p>
+          <p>📱 WhatsApp: <a href="https://wa.me/880123456789" target="_blank">+880123456789</a></p>
+        </div>
+        <div class="footer-section social">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://fb.com/nexoraagency" target="_blank">🌐</a>
+            <a href="https://wa.me/880123456789" target="_blank">💬</a>
+            <a href="mailto:nexoraagency@gmail.com">✉️</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 NEXORA Agency. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Chatbot Container -->
   <div id="chatbotBox" class="chatbot">
     <div class="chat-header">💬 NEXORA Chatbot</div>
-    <div class="chat-body"><p>Hello! How can we help you today?</p></div>
-    <div class="chat-footer"><input type="text" placeholder="Type a message..."><button>Send</button></div>
+    <div class="chat-body"></div>
+    <div class="chat-footer">
+      <input type="text" placeholder="Type a message...">
+      <button>Send</button>
+    </div>
   </div>
 
   <script src="chatbot.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const grid = document.getElementById("teamGrid");
+      const modal = document.getElementById("memberModal");
+      const closeModal = document.getElementById("closeModal");
+
+      // Modal nodes
+      const mAvatar = document.getElementById("modalAvatar");
+      const mName = document.getElementById("modalName");
+      const mRole = document.getElementById("modalRole");
+      const mBio = document.getElementById("modalBio");
+      const mBadges = document.getElementById("modalBadges");
+      const mProjects = document.getElementById("modalProjects");
+      const mContacts = document.getElementById("modalContacts");
+
+      // Open Modal helper
+      function openMemberModal(member) {
+        // Set basic info
+        mAvatar.src = `images/team/${member.memberId}.png`;
+        mAvatar.onerror = () => {
+          mAvatar.src = 'https://www.w3schools.com/howto/img_avatar.png'; // Fallback
+        };
+        mName.textContent = member.name;
+        mRole.textContent = member.role;
+        mBio.textContent = member.bio;
+
+        // Render Certifications
+        mBadges.innerHTML = "";
+        if (member.certifications && member.certifications.length > 0) {
+          member.certifications.forEach(cert => {
+            const badge = document.createElement("span");
+            badge.className = "badge";
+            badge.textContent = cert;
+            mBadges.appendChild(badge);
+          });
+        } else {
+          mBadges.innerHTML = "<p style='color: var(--text-muted); font-size: 13px;'>No certifications added yet.</p>";
+        }
+
+        // Render Projects
+        mProjects.innerHTML = "";
+        if (member.projects && member.projects.length > 0) {
+          member.projects.forEach(project => {
+            const pItem = document.createElement("div");
+            pItem.className = "project-item";
+            pItem.textContent = project;
+            mProjects.appendChild(pItem);
+          });
+        } else {
+          mProjects.innerHTML = "<p style='color: var(--text-muted); font-size: 13px;'>No projects listed yet.</p>";
+        }
+
+        // Render Contact Links
+        mContacts.innerHTML = "";
+        if (member.email) {
+          mContacts.innerHTML += `<a href="mailto:${member.email}" class="modal-contact-link">✉️ Email</a>`;
+        }
+        if (member.phone) {
+          mContacts.innerHTML += `<a href="tel:${member.phone}" class="modal-contact-link">📞 Call</a>`;
+        }
+        if (member.facebook) {
+          mContacts.innerHTML += `<a href="${member.facebook}" target="_blank" class="modal-contact-link">📘 Facebook</a>`;
+        }
+        if (member.instagram) {
+          mContacts.innerHTML += `<a href="${member.instagram}" target="_blank" class="modal-contact-link">📷 Instagram</a>`;
+        }
+
+        // Show Modal
+        modal.classList.add("active");
+      }
+
+      // Close Modal helper
+      closeModal.addEventListener("click", () => {
+        modal.classList.remove("active");
+      });
+
+      window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.classList.remove("active");
+        }
+      });
+
+      async function loadTeam() {
+        try {
+          const response = await fetch("/api/team");
+          const team = await response.json();
+
+          if (team && team.length > 0) {
+            grid.innerHTML = "";
+            team.forEach(member => {
+              const card = document.createElement("div");
+              card.className = "service-card member-card";
+              
+              // Member Avatar path
+              const imgPath = `images/team/${member.memberId}.png`;
+
+              card.innerHTML = `
+                <div class="member-avatar-container">
+                  <img src="${imgPath}" class="member-avatar" alt="${member.name}" onerror="this.src='https://www.w3schools.com/howto/img_avatar.png';">
+                </div>
+                <div class="member-role">${member.role}</div>
+                <h3>${member.name}</h3>
+                <p>${member.bio.substring(0, 80)}...</p>
+                <span style="color: var(--accent-gold); font-size: 12px; font-weight: bold; border-bottom: 1px solid var(--accent-gold); padding-bottom: 2px;">View Portfolio</span>
+              `;
+
+              card.addEventListener("click", () => openMemberModal(member));
+              grid.appendChild(card);
+            });
+          } else {
+            grid.innerHTML = `<p style="text-align: center; color: var(--text-muted); width: 100%;">No members found in team directory.</p>`;
+          }
+        } catch (error) {
+          console.error("Error loading team:", error);
+          grid.innerHTML = `<p style="text-align: center; color: red; width: 100%;">Failed to load team profiles.</p>`;
+        }
+      }
+
+      loadTeam();
+    });
+  </script>
 </body>
 </html>

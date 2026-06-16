@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!chatBox) return;
 
   // Toggle Visibility
-  toggleBtn.addEventListener("click", () => {
+  const handleToggle = () => {
     if (chatBox.classList.contains("active")) {
       chatBox.classList.remove("active");
       setTimeout(() => {
@@ -167,7 +167,17 @@ document.addEventListener("DOMContentLoaded", () => {
       chatBox.offsetHeight;
       chatBox.classList.add("active");
     }
-  });
+  };
+
+  toggleBtn.addEventListener("click", handleToggle);
+
+  const navChatbot = document.getElementById("navChatbot");
+  if (navChatbot) {
+    navChatbot.addEventListener("click", (e) => {
+      e.preventDefault();
+      handleToggle();
+    });
+  }
 
   // 4. Setup Chat logic inside the widget
   const input = chatBox.querySelector(".chat-footer input");

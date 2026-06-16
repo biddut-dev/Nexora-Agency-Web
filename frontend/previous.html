@@ -2,105 +2,96 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NEXORA Agency | Previous Work</title>
-  <style>
-    body{margin:0;font-family:Arial;background:#000;color:#fff;}
-    header{background:#800000;padding:15px 30px;}
-    .logo{display:inline-block;font-size:24px;font-weight:bold;color:#fff;}
-    nav ul{list-style:none;float:right;margin:0;padding:0;}
-    nav ul li{display:inline-block;margin:0 10px;}
-    nav ul li a{color:#fff;text-decoration:none;transition:all 0.3s ease;}
-    nav ul li a:hover{color:#ffcc00;border-bottom:2px solid #ffcc00;}
-    .hero{text-align:center;padding:60px 20px;background:linear-gradient(to right,#000,#800000);}
-    .hero h2{font-size:32px;margin-bottom:20px;}
-    .timeline{max-width:800px;margin:40px auto;padding:20px;}
-    .work-item{background:#111;border:1px solid #800000;border-radius:8px;margin-bottom:20px;padding:20px;transition:0.3s;}
-    .work-item:hover{box-shadow:0 0 15px #800000;}
-    .work-item h3{color:#ffcc00;margin-bottom:10px;}
-    .work-item p{color:#ccc;}
-    footer{background:#111;text-align:center;padding:20px;font-size:14px;color:#fff;margin-top:auto;}
-    .footer-container{display:flex;flex-wrap:wrap;justify-content:space-around;text-align:left;}
-    .footer-section{flex:1;min-width:250px;margin:10px;}
-    .footer-section h3{color:#ffcc00;margin-bottom:10px;}
-    .footer-section p,.footer-section a{color:#ccc;text-decoration:none;transition:color 0.3s ease;}
-    .footer-section a:hover{color:#ffcc00;}
-    .social-icons a{font-size:20px;margin-right:10px;transition:transform 0.3s ease,color 0.3s ease;}
-    .social-icons a:hover{color:#ffcc00;transform:scale(1.2);}
-    .footer-bottom{text-align:center;margin-top:20px;border-top:1px solid #333;padding-top:10px;font-size:14px;color:#aaa;}
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <h1 class="logo">NEXORA Agency</h1>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="previous.html">Previous Work</a></li>
-        <li><a href="reviews.html">Client Reviews</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="chatbot.html">Chatbot</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="page-container">
+    <header>
+      <nav>
+        <h1 class="logo">NEXORA Agency</h1>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Team Portfolio</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="previous.html" class="active">Previous Work</a></li>
+          <li><a href="reviews.html">Client Reviews</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#" id="navChatbot">Chatbot</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <section class="hero">
-    <h2>Previous Work</h2>
-    <p>Explore some of our past projects and collaborations.</p>
-  </section>
+    <section class="hero">
+      <h2>Previous Work</h2>
+      <p>Explore some of our past projects, case studies, and digital transformations.</p>
+    </section>
 
-  <div class="timeline">
-    <div class="work-item">
-      <h3>2024 – E‑Commerce Website</h3>
-      <p>Developed a responsive online store with integrated payment systems.</p>
-    </div>
-    <div class="work-item">
-      <h3>2025 – SEO Campaign</h3>
-      <p>Boosted organic traffic for a tech blog by 150% in 6 months.</p>
-    </div>
-    <div class="work-item">
-      <h3>2025 – Digital Marketing</h3>
-      <p>Managed a social media campaign that reached 1M+ users globally.</p>
-    </div>
-    <div class="work-item">
-      <h3>2026 – Cybersecurity Solutions</h3>
-      <p>Implemented advanced security protocols for a financial institution.</p>
-    </div>
-  </div>
-
-  <!-- Footer same as services.html -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-section faq">
-        <h3>FAQ</h3>
-        <p><strong>Q:</strong> How long does a project take?<br><strong>A:</strong> Depends on scope, usually 2–6 weeks.</p>
-        <p><strong>Q:</strong> Do you offer support?<br><strong>A:</strong> Yes, 24/7 client support available.</p>
+    <!-- Timeline/Work Container -->
+    <div class="faq-container" style="margin-bottom: 80px;">
+      <div class="service-card">
+        <div style="color: var(--accent-gold); font-size: 13px; font-weight: 600; text-transform: uppercase; margin-bottom: 5px;">2024 – Case Study</div>
+        <h3>Interactive E-Commerce Hub</h3>
+        <p>Built a custom headless Shopify store with micro-interactions, responsive grids, and instant payment validation. Resulted in a 40% increase in checkout conversions.</p>
       </div>
-      <div class="footer-section contact">
-        <h3>Contact Us</h3>
-        <p>📧 Email: <a href="mailto:nexoraagency@gmail.com">nexoraagency@gmail.com</a></p>
-        <p>📘 Facebook: <a href="https://fb.com/nexoraagency" target="_blank">fb.com/nexoraagency</a></p>
-        <p>📱 WhatsApp: <a href="https://wa.me/880123456789" target="_blank">+880123456789</a></p>
+
+      <div class="service-card">
+        <div style="color: var(--accent-gold); font-size: 13px; font-weight: 600; text-transform: uppercase; margin-bottom: 5px;">2025 – SEO Optimization</div>
+        <h3>Corporate Tech Blog Scaling</h3>
+        <p>Conducted a deep technical SEO overhaul, resolving structural DNS delays and content hierarchy. Organic search traffic surged by 150% within the first six months.</p>
       </div>
-      <div class="footer-section social">
-        <h3>Follow Us</h3>
-        <div class="social-icons">
-          <a href="https://fb.com/nexoraagency" target="_blank">🌐</a>
-          <a href="https://wa.me/880123456789" target="_blank">💬</a>
-          <a href="mailto:nexoraagency@gmail.com">✉️</a>
+
+      <div class="service-card">
+        <div style="color: var(--accent-gold); font-size: 13px; font-weight: 600; text-transform: uppercase; margin-bottom: 5px;">2025 – B2B Digital Marketing</div>
+        <h3>SaaS Global Brand Campaign</h3>
+        <p>Engineered and scaled a comprehensive paid marketing acquisition pipeline. Reached over 1.2M targeted professionals and reduced CPA (Cost Per Acquisition) by 28%.</p>
+      </div>
+
+      <div class="service-card">
+        <div style="color: var(--accent-gold); font-size: 13px; font-weight: 600; text-transform: uppercase; margin-bottom: 5px;">2026 – Network Security</div>
+        <h3>Fintech Cybersecurity Audit</h3>
+        <p>Conducted a full-scale vulnerability penetration test and integrated end-to-end data encryption protocols for a regional financial services firm.</p>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section faq">
+          <h3>FAQ</h3>
+          <p><strong>Q:</strong> How long does a project take?<br><strong>A:</strong> Usually 2–6 weeks, depending on the scope.</p>
+          <p style="margin-top: 10px;"><strong>Q:</strong> Do you offer continuous support?<br><strong>A:</strong> Yes, 24/7 dedicated support is available.</p>
+        </div>
+        <div class="footer-section contact">
+          <h3>Contact Us</h3>
+          <p>📧 Email: <a href="mailto:nexoraagency@gmail.com">nexoraagency@gmail.com</a></p>
+          <p>📘 Facebook: <a href="https://fb.com/nexoraagency" target="_blank">fb.com/nexoraagency</a></p>
+          <p>📱 WhatsApp: <a href="https://wa.me/880123456789" target="_blank">+880123456789</a></p>
+        </div>
+        <div class="footer-section social">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://fb.com/nexoraagency" target="_blank">🌐</a>
+            <a href="https://wa.me/880123456789" target="_blank">💬</a>
+            <a href="mailto:nexoraagency@gmail.com">✉️</a>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="footer-bottom"><p>© 2026 NEXORA Agency. All Rights Reserved.</p></div>
-  </footer>
+      <div class="footer-bottom">
+        <p>© 2026 NEXORA Agency. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </div>
 
-  <!-- Chatbot dock -->
+  <!-- Chatbot Container -->
   <div id="chatbotBox" class="chatbot">
     <div class="chat-header">💬 NEXORA Chatbot</div>
-    <div class="chat-body"><p>Hello! How can we help you today?</p></div>
-    <div class="chat-footer"><input type="text" placeholder="Type a message..."><button>Send</button></div>
+    <div class="chat-body"></div>
+    <div class="chat-footer">
+      <input type="text" placeholder="Type a message...">
+      <button>Send</button>
+    </div>
   </div>
 
   <script src="chatbot.js"></script>

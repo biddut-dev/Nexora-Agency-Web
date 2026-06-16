@@ -10,6 +10,9 @@ dns.setServers(["1.1.1.1", "8.8.8.8"]);
 
 const contactRoutes = require("./routes/contactRoutes");
 const reviewRoutes = require("./routes/reviewRoutes");
+const serviceRoutes = require("./routes/serviceRoutes");
+const faqRoutes = require("./routes/faqRoutes");
+const teamRoutes = require("./routes/teamRoutes");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -24,6 +27,9 @@ app.use(express.static(path.join(__dirname, "../frontend")));
 // Routes
 app.use("/api/contacts", contactRoutes);
 app.use("/api/reviews", reviewRoutes);
+app.use("/api/services", serviceRoutes);
+app.use("/api/faqs", faqRoutes);
+app.use("/api/team", teamRoutes);
 
 // Database Connection
 const connectDB = async () => {

@@ -2,95 +2,160 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NEXORA Agency | FAQ</title>
-  <style>
-    body{margin:0;font-family:Arial;background:#000;color:#fff;}
-    header{background:#800000;padding:15px 30px;}
-    .logo{display:inline-block;font-size:24px;font-weight:bold;color:#fff;}
-    nav ul{list-style:none;float:right;margin:0;padding:0;}
-    nav ul li{display:inline-block;margin:0 10px;}
-    nav ul li a{color:#fff;text-decoration:none;transition:all 0.3s ease;}
-    nav ul li a:hover{color:#ffcc00;border-bottom:2px solid #ffcc00;}
-    .hero{text-align:center;padding:60px 20px;background:linear-gradient(to right,#000,#800000);}
-    .hero h2{font-size:32px;margin-bottom:20px;}
-    .faq-container{max-width:800px;margin:40px auto;padding:20px;}
-    .faq-item{background:#111;border:1px solid #800000;border-radius:8px;margin-bottom:15px;padding:15px;transition:0.3s;}
-    .faq-item:hover{box-shadow:0 0 15px #800000;}
-    .faq-item h3{color:#ffcc00;margin-bottom:10px;}
-    .faq-item p{color:#ccc;}
-    footer{background:#111;text-align:center;padding:20px;font-size:14px;color:#fff;margin-top:auto;}
-    .footer-container{display:flex;flex-wrap:wrap;justify-content:space-around;text-align:left;}
-    .footer-section{flex:1;min-width:250px;margin:10px;}
-    .footer-section h3{color:#ffcc00;margin-bottom:10px;}
-    .footer-section p,.footer-section a{color:#ccc;text-decoration:none;transition:color 0.3s ease;}
-    .footer-section a:hover{color:#ffcc00;}
-    .social-icons a{font-size:20px;margin-right:10px;transition:transform 0.3s ease,color 0.3s ease;}
-    .social-icons a:hover{color:#ffcc00;transform:scale(1.2);}
-    .footer-bottom{text-align:center;margin-top:20px;border-top:1px solid #333;padding-top:10px;font-size:14px;color:#aaa;}
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <h1 class="logo">NEXORA Agency</h1>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="previous.html">Previous Work</a></li>
-        <li><a href="reviews.html">Client Reviews</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="chatbot.html">Chatbot</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="page-container">
+    <header>
+      <nav>
+        <h1 class="logo">NEXORA Agency</h1>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Team Portfolio</a></li>
+          <li><a href="faq.html" class="active">FAQ</a></li>
+          <li><a href="previous.html">Previous Work</a></li>
+          <li><a href="reviews.html">Client Reviews</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#" id="navChatbot">Chatbot</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <section class="hero">
-    <h2>Frequently Asked Questions</h2>
-    <p>Find answers to common queries about our agency.</p>
-  </section>
+    <section class="hero">
+      <h2>Frequently Asked Questions</h2>
+      <p>Clear, direct answers to help you understand how Nexora delivers digital excellence.</p>
+    </section>
 
-  <div class="faq-container">
-    <div class="faq-item"><h3>How long does a project take?</h3><p>Depends on scope, usually 2–6 weeks.</p></div>
-    <div class="faq-item"><h3>Do you offer support?</h3><p>Yes, 24/7 client support available.</p></div>
-    <div class="faq-item"><h3>Can you customize services?</h3><p>Absolutely, we tailor solutions to your needs.</p></div>
-    <div class="faq-item"><h3>What industries do you serve?</h3><p>We work with startups, enterprises, and NGOs globally.</p></div>
-  </div>
-
-  <!-- Footer same as services.html -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-section faq">
-        <h3>FAQ</h3>
-        <p><strong>Q:</strong> How long does a project take?<br><strong>A:</strong> Depends on scope, usually 2–6 weeks.</p>
-        <p><strong>Q:</strong> Do you offer support?<br><strong>A:</strong> Yes, 24/7 client support available.</p>
-      </div>
-      <div class="footer-section contact">
-        <h3>Contact Us</h3>
-        <p>📧 Email: <a href="mailto:nexoraagency@gmail.com">nexoraagency@gmail.com</a></p>
-        <p>📘 Facebook: <a href="https://fb.com/nexoraagency" target="_blank">fb.com/nexoraagency</a></p>
-        <p>📱 WhatsApp: <a href="https://wa.me/880123456789" target="_blank">+880123456789</a></p>
-      </div>
-      <div class="footer-section social">
-        <h3>Follow Us</h3>
-        <div class="social-icons">
-          <a href="https://fb.com/nexoraagency" target="_blank">🌐</a>
-          <a href="https://wa.me/880123456789" target="_blank">💬</a>
-          <a href="mailto:nexoraagency@gmail.com">✉️</a>
+    <div class="faq-container" id="faqContainer">
+      <!-- Loading skeleton -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <span>Loading questions...</span>
+          <span class="arrow">▼</span>
         </div>
       </div>
     </div>
-    <div class="footer-bottom"><p>© 2026 NEXORA Agency. All Rights Reserved.</p></div>
-  </footer>
 
-  <!-- Chatbot dock -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section faq">
+          <h3>FAQ</h3>
+          <p><strong>Q:</strong> How long does a project take?<br><strong>A:</strong> Usually 2–6 weeks, depending on the scope.</p>
+          <p style="margin-top: 10px;"><strong>Q:</strong> Do you offer continuous support?<br><strong>A:</strong> Yes, 24/7 dedicated support is available.</p>
+        </div>
+        <div class="footer-section contact">
+          <h3>Contact Us</h3>
+          <p>📧 Email: <a href="mailto:nexoraagency@gmail.com">nexoraagency@gmail.com</a></p>
+          <p>📘 Facebook: <a href="https://fb.com/nexoraagency" target="_blank">fb.com/nexoraagency</a></p>
+          <p>📱 WhatsApp: <a href="https://wa.me/880123456789" target="_blank">+880123456789</a></p>
+        </div>
+        <div class="footer-section social">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://fb.com/nexoraagency" target="_blank">🌐</a>
+            <a href="https://wa.me/880123456789" target="_blank">💬</a>
+            <a href="mailto:nexoraagency@gmail.com">✉️</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 NEXORA Agency. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Chatbot Container -->
   <div id="chatbotBox" class="chatbot">
     <div class="chat-header">💬 NEXORA Chatbot</div>
-    <div class="chat-body"><p>Hello! How can we help you today?</p></div>
-    <div class="chat-footer"><input type="text" placeholder="Type a message..."><button>Send</button></div>
+    <div class="chat-body"></div>
+    <div class="chat-footer">
+      <input type="text" placeholder="Type a message...">
+      <button>Send</button>
+    </div>
   </div>
 
   <script src="chatbot.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const container = document.getElementById("faqContainer");
+
+      async function loadFAQs() {
+        try {
+          const response = await fetch("/api/faqs");
+          const faqs = await response.json();
+
+          if (faqs && faqs.length > 0) {
+            container.innerHTML = "";
+            faqs.forEach(faq => {
+              const item = document.createElement("div");
+              item.className = "faq-item";
+              item.innerHTML = `
+                <div class="faq-header">
+                  <span>${faq.question}</span>
+                  <span class="arrow">▼</span>
+                </div>
+                <div class="faq-content">
+                  <p>${faq.answer}</p>
+                </div>
+              `;
+              
+              // Toggle event
+              item.querySelector(".faq-header").addEventListener("click", () => {
+                const isActive = item.classList.contains("active");
+                // Close all others
+                document.querySelectorAll(".faq-item").forEach(i => i.classList.remove("active"));
+                
+                if (!isActive) {
+                  item.classList.add("active");
+                }
+              });
+
+              container.appendChild(item);
+            });
+          } else {
+            // Backup fallback FAQ
+            const fallbackFAQs = [
+              { question: "How long does a project take?", answer: "Project timelines vary depending on complexity, but most projects are completed within 2 to 6 weeks." },
+              { question: "Do you offer support after project completion?", answer: "Yes, we provide ongoing maintenance and support services after project delivery." },
+              { question: "Can you customize services according to business needs?", answer: "Absolutely. All our services are tailored to meet the specific requirements of each client." },
+              { question: "What industries do you work with?", answer: "We work with startups, small businesses, enterprises, NGOs, and e-commerce brands worldwide." }
+            ];
+            container.innerHTML = "";
+            fallbackFAQs.forEach(faq => {
+              const item = document.createElement("div");
+              item.className = "faq-item";
+              item.innerHTML = `
+                <div class="faq-header">
+                  <span>${faq.question}</span>
+                  <span class="arrow">▼</span>
+                </div>
+                <div class="faq-content">
+                  <p>${faq.answer}</p>
+                </div>
+              `;
+              
+              item.querySelector(".faq-header").addEventListener("click", () => {
+                const isActive = item.classList.contains("active");
+                document.querySelectorAll(".faq-item").forEach(i => i.classList.remove("active"));
+                if (!isActive) {
+                  item.classList.add("active");
+                }
+              });
+
+              container.appendChild(item);
+            });
+          }
+        } catch (error) {
+          console.error("Error loading FAQs:", error);
+          container.innerHTML = `<p style="text-align: center; color: red; width: 100%;">Failed to load FAQs. Check server connection.</p>`;
+        }
+      }
+
+      loadFAQs();
+    });
+  </script>
 </body>
 </html>
