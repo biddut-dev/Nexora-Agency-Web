@@ -219,4 +219,39 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // Dynamic Footer Info Loading from Database
+  async function loadFooterInfo() {
+    try {
+      const res = await fetch("/api/agency");
+      const agency = await res.json();
+      if (!agency) return;
+
+      // Update Contact Section in Footer
+      const contactSection = document.querySelector(".footer-section.contact");
+      if (contactSection) {
+        let waNumber = agency.phone ? agency.phone.replace(/[^0-9]/g, '') : '';
+        contactSection.innerHTML = `
+          <h3>Contact Us</h3>
+          ${agency.email ? `<p>📧 Email: <a href="mailto:${agency.email}">${agency.email}</a></p>` : ''}
+          ${agency.facebook ? `<p>📘 Facebook: <a href="${agency.facebook}" target="_blank">fb.com/nexoraagency</a></p>` : ''}
+          ${agency.phone ? `<p>📱 WhatsApp: <a href="https://wa.me/${waNumber}" target="_blank">${agency.phone}</a></p>` : ''}
+        `;
+      }
+
+      // Update Social Icons Section in Footer
+      const socialIcons = document.querySelector(".footer-section.social .social-icons");
+      if (socialIcons) {
+        let waNumber = agency.phone ? agency.phone.replace(/[^0-9]/g, '') : '';
+        socialIcons.innerHTML = `
+          ${agency.facebook ? `<a href="${agency.facebook}" target="_blank" title="Facebook">🌐</a>` : ''}
+          ${agency.phone ? `<a href="https://wa.me/${waNumber}" target="_blank" title="WhatsApp">💬</a>` : ''}
+          ${agency.email ? `<a href="mailto:${agency.email}" title="Email">✉️</a>` : ''}
+        `;
+      }
+    } catch (err) {
+      console.error("Error loading agency footer info:", err);
+    }
+  }
+  loadFooterInfo();
 });
