@@ -28,6 +28,11 @@ const FALLBACKS = {
     bio: "Founder & CEO of Nexora Agency. Leads business strategy, strategic planning, and overall technology vision with 8+ years of startup leadership experience.",
     certifications: ["Certified ScrumMaster (CSM)", "AWS Certified Cloud Practitioner", "Google Project Management Certificate"],
     projects: ["Nexora Core Platform", "Corporate Brand Portal", "E-Commerce Suite"]
+  },
+  TM006: {
+    bio: "Dynamic Social Media Manager specializing in brand building, visual design, organic engagement, and paid ad strategies across Facebook, Instagram, and LinkedIn.",
+    certifications: ["HubSpot Social Media Certification", "Google Digital Marketing Certificate", "Meta Certified Digital Marketing Associate"],
+    projects: ["Growth Boost 2025", "Visual Identity Makeover", "Paid Campaign Funnels"]
   }
 };
 

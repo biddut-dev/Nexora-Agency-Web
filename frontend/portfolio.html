@@ -139,7 +139,13 @@
         // Set basic info
         mAvatar.src = `images/team/${member.memberId}.png`;
         mAvatar.onerror = () => {
-          mAvatar.src = 'https://www.w3schools.com/howto/img_avatar.png'; // Fallback
+          if (mAvatar.src.endsWith('.png')) {
+            mAvatar.src = `images/team/${member.memberId}.jpg`;
+          } else if (mAvatar.src.endsWith('.jpg')) {
+            mAvatar.src = `images/team/${member.memberId}.jpeg`;
+          } else {
+            mAvatar.src = 'https://www.w3schools.com/howto/img_avatar.png'; // Fallback
+          }
         };
         mName.textContent = member.name;
         mRole.textContent = member.role;
@@ -217,7 +223,8 @@
 
               card.innerHTML = `
                 <div class="member-avatar-container">
-                  <img src="${imgPath}" class="member-avatar" alt="${member.name}" onerror="this.src='https://www.w3schools.com/howto/img_avatar.png';">
+                  <img src="${imgPath}" class="member-avatar" alt="${member.name}" 
+                       onerror="if (this.src.endsWith('.png')) { this.src='images/team/${member.memberId}.jpg'; } else if (this.src.endsWith('.jpg')) { this.src='images/team/${member.memberId}.jpeg'; } else { this.src='https://www.w3schools.com/howto/img_avatar.png'; }">
                 </div>
                 <div class="member-role">${member.role}</div>
                 <h3>${member.name}</h3>
