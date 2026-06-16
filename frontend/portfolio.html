@@ -207,40 +207,122 @@
         }
       });
 
+      const LOCAL_FALLBACK_TEAM = [
+        {
+          memberId: "TM001",
+          name: "Nazmus Sharif",
+          role: "Social Media Manager",
+          phone: "8801341179400",
+          email: "nazmussharif043@gmail.com",
+          facebook: "https://www.facebook.com/?ref=homescreenpwa",
+          instagram: "https://www.instagram.com/",
+          bio: "Dynamic Social Media Manager specializing in content curation, audience engagement analytics, and cross-channel community building.",
+          certifications: ["HubSpot Social Media Strategy", "Google Digital Marketing Certificate", "Facebook Certified Creative Associate"],
+          projects: ["Creative Visual Identity", "Content Calendar Automation", "Engagement Booster 2025"]
+        },
+        {
+          memberId: "TM002",
+          name: "Sabbir Ahmed",
+          role: "Social Media Manager",
+          phone: "8801913150979",
+          email: "ahmed.sabbirjsr@gmail.com",
+          facebook: "https://www.facebook.com/sabbir175.3",
+          instagram: "https://www.instagram.com/ahmed.sabbir17/",
+          bio: "Creative Social Media Manager specializing in brand building, visual aesthetics, audience engagement strategies, and viral growth hacking across major platforms.",
+          certifications: ["Facebook Blueprint Certified Associate", "HubSpot Social Media Certification", "Google Ads Measurement Certification"],
+          projects: ["Viral Launch Campaign 2025", "Visual Identity Refresh", "Growth Ads Funnel"]
+        },
+        {
+          memberId: "TM003",
+          name: "MD Hasanuzzaman Shourov",
+          role: "Marketing & Sales Expert",
+          phone: "8801885595913",
+          email: "shourovhassan145596@gmail.com",
+          facebook: "https://www.facebook.com/share/1BJxXVpd4q/",
+          instagram: "https://www.instagram.com/sh_shourov_hassan?igsh=MWM4YWZ0bGw4bmdzaw==",
+          bio: "Senior Sales & Marketing Strategist specializing in corporate business growth, client relations, sales pipeline optimization, and lead generation campaigns.",
+          certifications: ["HubSpot Inbound Sales Certificate", "Strategic B2B Selling Certificate", "Google Analytics Individual Qualification"],
+          projects: ["Enterprise Partnership Launch", "CRM Setup & Integration", "B2B Sales Outreach Hack"]
+        },
+        {
+          memberId: "TM004",
+          name: "Abu Fahad Biddut",
+          role: "Junior Web Developer",
+          phone: "8801837455382",
+          email: "abufahadbiddut@gmail.com",
+          facebook: "https://www.facebook.com/share/1AkKULqRdn/",
+          instagram: "https://www.instagram.com/abufahadbiddut_dev?igsh=eHJobGJxZ2N2cWo1",
+          bio: "Full-Stack Web Developer passionate about constructing modern, accessible, and fast web applications using JavaScript, Node.js, and MongoDB.",
+          certifications: ["Meta Front-End Developer Certificate", "MERN Stack Specialist Certificate", "Responsive Web Design (FreeCodeCamp)"],
+          projects: ["Nexora Chatbot Widget", "Reviews and Feedback API", "Client Intake Forms"]
+        },
+        {
+          memberId: "TM005",
+          name: "Md. Ekthiar Alam Shiam",
+          role: "CEO and Founder",
+          phone: "8801778627380",
+          email: "ekthiarshiam@gmail.com",
+          facebook: "https://www.facebook.com/share/1A5yWmRQV8/",
+          instagram: "https://www.instagram.com/engag_eelevate?igsh=OWY0a2E5MW5tbXZy",
+          bio: "Founder & CEO of Nexora Agency. Leads business strategy, strategic planning, and overall technology vision with 8+ years of startup leadership experience.",
+          certifications: ["Certified ScrumMaster (CSM)", "AWS Certified Cloud Practitioner", "Google Project Management Certificate"],
+          projects: ["Nexora Core Platform", "Corporate Brand Portal", "E-Commerce Suite"]
+        },
+        {
+          memberId: "TM006",
+          name: "Tanzim Shahriar Nafi",
+          role: "Social Media Manager",
+          phone: "+8801312463937",
+          email: "tanzimshahriar666@gmail.com",
+          facebook: "https://www.facebook.com/share/1B4bK6d32V/?mibextid=wwXIfr",
+          instagram: "https://www.instagram.com/iamnafuuu/?__pwa=1",
+          linkedin: "https://www.linkedin.com/in/tanzim-sahariar/",
+          bio: "Dynamic Social Media Manager specializing in brand building, visual design, organic engagement, and paid ad strategies across Facebook, Instagram, and LinkedIn.",
+          certifications: ["HubSpot Social Media Certification", "Google Digital Marketing Certificate", "Meta Certified Digital Marketing Associate"],
+          projects: ["Growth Boost 2025", "Visual Identity Makeover", "Paid Campaign Funnels"]
+        }
+      ];
+
+      function renderTeam(team) {
+        grid.innerHTML = "";
+        team.forEach(member => {
+          const card = document.createElement("div");
+          card.className = "service-card member-card";
+          
+          // Member Avatar path
+          const imgPath = `images/team/${member.memberId}.png`;
+
+          card.innerHTML = `
+            <div class="member-avatar-container">
+              <img src="${imgPath}" class="member-avatar" alt="${member.name}" 
+                   onerror="if (this.src.endsWith('.png')) { this.src='images/team/${member.memberId}.jpg'; } else if (this.src.endsWith('.jpg')) { this.src='images/team/${member.memberId}.jpeg'; } else { this.src='https://www.w3schools.com/howto/img_avatar.png'; }">
+            </div>
+            <div class="member-role">${member.role}</div>
+            <h3>${member.name}</h3>
+            <p>${member.bio.substring(0, 80)}...</p>
+            <span style="color: var(--accent-gold); font-size: 12px; font-weight: bold; border-bottom: 1px solid var(--accent-gold); padding-bottom: 2px;">View Portfolio</span>
+          `;
+
+          card.addEventListener("click", () => openMemberModal(member));
+          grid.appendChild(card);
+        });
+      }
+
       async function loadTeam() {
         try {
           const response = await fetch("/api/team");
           const team = await response.json();
 
-          if (team && team.length > 0) {
-            grid.innerHTML = "";
-            team.forEach(member => {
-              const card = document.createElement("div");
-              card.className = "service-card member-card";
-              
-              // Member Avatar path
-              const imgPath = `images/team/${member.memberId}.png`;
-
-              card.innerHTML = `
-                <div class="member-avatar-container">
-                  <img src="${imgPath}" class="member-avatar" alt="${member.name}" 
-                       onerror="if (this.src.endsWith('.png')) { this.src='images/team/${member.memberId}.jpg'; } else if (this.src.endsWith('.jpg')) { this.src='images/team/${member.memberId}.jpeg'; } else { this.src='https://www.w3schools.com/howto/img_avatar.png'; }">
-                </div>
-                <div class="member-role">${member.role}</div>
-                <h3>${member.name}</h3>
-                <p>${member.bio.substring(0, 80)}...</p>
-                <span style="color: var(--accent-gold); font-size: 12px; font-weight: bold; border-bottom: 1px solid var(--accent-gold); padding-bottom: 2px;">View Portfolio</span>
-              `;
-
-              card.addEventListener("click", () => openMemberModal(member));
-              grid.appendChild(card);
-            });
+          // If it's a valid list and not empty
+          if (team && Array.isArray(team) && team.length > 0) {
+            renderTeam(team);
           } else {
-            grid.innerHTML = `<p style="text-align: center; color: var(--text-muted); width: 100%;">No members found in team directory.</p>`;
+            console.warn("Empty team response, loading fallback team directory...");
+            renderTeam(LOCAL_FALLBACK_TEAM);
           }
         } catch (error) {
-          console.error("Error loading team:", error);
-          grid.innerHTML = `<p style="text-align: center; color: red; width: 100%;">Failed to load team profiles.</p>`;
+          console.error("Error loading team, loading fallback team directory:", error);
+          renderTeam(LOCAL_FALLBACK_TEAM);
         }
       }
 

@@ -80,52 +80,44 @@
     document.addEventListener("DOMContentLoaded", () => {
       const container = document.getElementById("servicesContainer");
 
+      const fallbackServices = [
+        { title: "Web Development", description: "Custom responsive websites built using modern technologies.", price: 500, duration: "2-6 Weeks" },
+        { title: "SEO Optimization", description: "Improve search engine rankings and increase organic traffic.", price: 300, duration: "1-3 Months" },
+        { title: "Digital Marketing", description: "Social media management, paid advertising and brand promotion.", price: 400, duration: "Monthly" },
+        { title: "Cybersecurity Solutions", description: "Security audits, penetration testing and data protection.", price: 700, duration: "1-4 Weeks" }
+      ];
+
+      function renderServices(services) {
+        container.innerHTML = "";
+        services.forEach(service => {
+          const card = document.createElement("div");
+          card.className = "service-card";
+          card.innerHTML = `
+            <h3>${service.title}</h3>
+            <p>${service.description}</p>
+            <div class="service-meta">
+              <span>Price: <strong>$${service.price}</strong></span>
+              <span>Duration: <strong>${service.duration}</strong></span>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      }
+
       async function loadServices() {
         try {
           const response = await fetch("/api/services");
           const services = await response.json();
 
-          if (services && services.length > 0) {
-            container.innerHTML = "";
-            services.forEach(service => {
-              const card = document.createElement("div");
-              card.className = "service-card";
-              card.innerHTML = `
-                <h3>${service.title}</h3>
-                <p>${service.description}</p>
-                <div class="service-meta">
-                  <span>Price: <strong>$${service.price}</strong></span>
-                  <span>Duration: <strong>${service.duration}</strong></span>
-                </div>
-              `;
-              container.appendChild(card);
-            });
+          if (services && Array.isArray(services) && services.length > 0) {
+            renderServices(services);
           } else {
-            // Static mock backup if DB is unreachable or empty
-            const fallbackServices = [
-              { title: "Web Development", description: "Custom responsive websites built using modern technologies.", price: 500, duration: "2-6 Weeks" },
-              { title: "SEO Optimization", description: "Improve search engine rankings and increase organic traffic.", price: 300, duration: "1-3 Months" },
-              { title: "Digital Marketing", description: "Social media management, paid advertising and brand promotion.", price: 400, duration: "Monthly" },
-              { title: "Cybersecurity Solutions", description: "Security audits, penetration testing and data protection.", price: 700, duration: "1-4 Weeks" }
-            ];
-            container.innerHTML = "";
-            fallbackServices.forEach(service => {
-              const card = document.createElement("div");
-              card.className = "service-card";
-              card.innerHTML = `
-                <h3>${service.title}</h3>
-                <p>${service.description}</p>
-                <div class="service-meta">
-                  <span>Price: <strong>$${service.price}</strong></span>
-                  <span>Duration: <strong>${service.duration}</strong></span>
-                </div>
-              `;
-              container.appendChild(card);
-            });
+            console.warn("Empty services list, rendering fallbacks.");
+            renderServices(fallbackServices);
           }
         } catch (error) {
-          console.error("Error loading services:", error);
-          container.innerHTML = `<p style="text-align: center; color: red; width: 100%;">Failed to load services. Check server connection.</p>`;
+          console.error("Error loading services, rendering fallbacks:", error);
+          renderServices(fallbackServices);
         }
       }
 
