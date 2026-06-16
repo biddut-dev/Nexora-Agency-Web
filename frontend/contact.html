@@ -29,12 +29,6 @@
     .social-icons a{font-size:20px;margin-right:10px;transition:transform 0.3s ease,color 0.3s ease;}
     .social-icons a:hover{color:#ffcc00;transform:scale(1.2);}
     .footer-bottom{text-align:center;margin-top:20px;border-top:1px solid #333;padding-top:10px;font-size:14px;color:#aaa;}
-    .chatbot{position:fixed;right:0;bottom:0;width:250px;height:60%;background:#111;border-left:3px solid #800000;display:flex;flex-direction:column;}
-    .chat-header{background:#800000;padding:10px;font-weight:bold;}
-    .chat-body{flex:1;padding:10px;overflow-y:auto;}
-    .chat-footer{padding:10px;background:#222;display:flex;}
-    .chat-footer input{flex:1;padding:5px;border:none;}
-    .chat-footer button{background:#800000;color:#fff;border:none;padding:5px 10px;}
   </style>
 </head>
 <body>
@@ -103,23 +97,9 @@
     <div class="chat-footer"><input type="text" placeholder="Type a message..."><button>Send</button></div>
   </div>
 
+  <script src="chatbot.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const input=document.querySelector(".chat-footer input");
-      const button=document.querySelector(".chat-footer button");
-      const chatBody=document.querySelector(".chat-body");
-      button.addEventListener("click",()=>{
-        if(input.value.trim()!==""){
-          const userMsg=document.createElement("p");
-          userMsg.textContent="You: "+input.value;
-          chatBody.appendChild(userMsg);
-          input.value="";
-          const botMsg=document.createElement("p");
-          botMsg.textContent="Bot: Thanks for reaching out!";
-          chatBody.appendChild(botMsg);
-        }
-      });
-
       // Contact form submission logic
       const contactForm = document.getElementById("contactForm");
       const contactStatus = document.getElementById("contactStatus");
